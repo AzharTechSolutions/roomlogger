@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Room Logger</title>
+<meta name="description" content="Privacy Policy for Room Logger — the rental property inspection app that protects your security deposit.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1B2B4B;
+    --navy-90: rgba(27,43,75,0.9);
+    --navy-08: rgba(27,43,75,0.08);
+    --navy-04: rgba(27,43,75,0.04);
+    --green:   #2ECC71;
+    --green-10:rgba(46,204,113,0.10);
+    --amber:   #F39C12;
+    --bg:      #F4F6FA;
+    --card:    #FFFFFF;
+    --border:  #E2E8F2;
+    --text:    #1B2B4B;
+    --muted:   #6B7A99;
+    --light:   #EEF1F8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Noise texture overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ══════════════════════════════════════
+     NAV
+  ══════════════════════════════════════ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244,246,250,0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .nav-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .brand-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    letter-spacing: -0.2px;
+  }
+
+  .nav-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+
+  /* ══════════════════════════════════════
+     HERO
+  ══════════════════════════════════════ */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px 80px;
+    text-align: center;
+  }
+
+  /* Geometric background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 20% 50%, rgba(46,204,113,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 80% 30%, rgba(255,255,255,0.04) 0%, transparent 60%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: var(--bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 40px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow span { color: var(--green); }
+
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5.5vw, 58px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    max-width: 440px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .hero-meta-item strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+
+  /* ══════════════════════════════════════
+     LAYOUT
+  ══════════════════════════════════════ */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 56px 24px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ══════════════════════════════════════
+     TOC
+  ══════════════════════════════════════ */
+  .toc {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 52px;
+    box-shadow: 0 2px 20px var(--navy-08);
+  }
+
+  .toc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .toc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .toc-header span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px;
+  }
+
+  .toc-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    transition: background 0.15s, color 0.15s;
+    border: 1px solid transparent;
+  }
+
+  .toc-link:hover {
+    background: var(--navy-04);
+    border-color: var(--border);
+    color: var(--navy);
+  }
+
+  .toc-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════
+     SECTIONS
+  ══════════════════════════════════════ */
+  .section {
+    margin-bottom: 56px;
+    scroll-margin-top: 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  /* Content typography */
+  .content p {
+    font-size: 15px;
+    color: #3D4F6E;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .content p:last-child { margin-bottom: 0; }
+
+  .content ul, .content ol {
+    margin: 16px 0 16px 4px;
+  }
+
+  .content li {
+    font-size: 15px;
+    color: #3D4F6E;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  .content ol {
+    counter-reset: ol-counter;
+  }
+
+  .content ol li {
+    counter-increment: ol-counter;
+  }
+
+  .content ol li::before {
+    content: counter(ol-counter) '.';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 13px;
+  }
+
+  /* Info card */
+  .info-card {
+    background: var(--green-10);
+    border: 1.5px solid rgba(46,204,113,0.2);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .info-card-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .info-card p {
+    font-size: 14px;
+    color: #1a7a46;
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+
+  .data-table th {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    text-align: left;
+  }
+
+  .data-table td {
+    padding: 13px 18px;
+    font-size: 14px;
+    color: #3D4F6E;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .data-table tr:nth-child(even) td { background: var(--navy-04); }
+
+  .data-table td strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  /* Third-party badge */
+  .vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .vendor-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .vendor-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .vendor-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .vendor-role {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  /* Rights grid */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .right-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .right-card:hover {
+    border-color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  .right-icon { font-size: 20px; margin-bottom: 8px; }
+
+  .right-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .right-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(46,204,113,0.07);
+  }
+
+  .contact-card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .contact-card-inner { position: relative; z-index: 1; }
+
+  .contact-card h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .contact-card p {
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .contact-link-primary {
+    background: var(--green);
+    color: #fff;
+  }
+
+  .contact-link-primary:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+  }
+
+  .contact-link-secondary {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .contact-link-secondary:hover {
+    background: rgba(255,255,255,0.18);
+  }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      var(--border) 20%,
+      var(--border) 80%,
+      transparent 100%);
+    margin: 0 0 56px;
+    border: none;
+  }
+
+  /* ══════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════ */
+  footer {
+    background: var(--navy);
+    padding: 36px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .footer-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .footer-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .footer-link {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-link:hover { color: rgba(255,255,255,0.75); }
+  .footer-link.active { color: var(--green); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ══════════════════════════════════════
+     ANIMATIONS
+  ══════════════════════════════════════ */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeSlideUp 0.6s ease both;
+  }
+
+  .hero-eyebrow  { animation-delay: 0.05s; }
+  .hero h1       { animation-delay: 0.15s; }
+  .hero-sub      { animation-delay: 0.25s; }
+  .hero-meta     { animation-delay: 0.35s; }
+
+  /* Fade in on scroll via class */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════ */
+  @media (max-width: 600px) {
+    .hero { padding: 52px 20px 68px; }
+    .page { padding: 40px 16px 80px; }
+    .toc  { padding: 22px 20px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .contact-card { padding: 28px 24px; }
+    .data-table { font-size: 13px; }
+    .data-table td, .data-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="brand-icon">🏠</div>
+      <span class="brand-name">Room Logger</span>
+    </a>
+    <span class="nav-badge">Privacy Policy</span>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>🔒</span> Legal Document
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="hero-sub">
+      How Room Logger collects, uses, and protects your personal data.
+      Written in plain English.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">📅 <strong>Effective:</strong> January 1, 2026</div>
+      <div class="hero-meta-item">🔄 <strong>Last updated:</strong> January 1, 2026</div>
+      <div class="hero-meta-item">🌍 <strong>Applies to:</strong> iOS &amp; Android</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Page ── -->
+<main class="page">
+
+  <!-- TOC -->
+  <div class="toc fade-in">
+    <div class="toc-header">
+      <div class="toc-dot"></div>
+      <span>Contents</span>
+    </div>
+    <div class="toc-grid">
+      <a href="#s1"  class="toc-link"><span class="toc-num">1</span> Who We Are</a>
+      <a href="#s2"  class="toc-link"><span class="toc-num">2</span> What We Collect</a>
+      <a href="#s3"  class="toc-link"><span class="toc-num">3</span> How We Use It</a>
+      <a href="#s4"  class="toc-link"><span class="toc-num">4</span> How We Store It</a>
+      <a href="#s5"  class="toc-link"><span class="toc-num">5</span> Third Parties</a>
+      <a href="#s6"  class="toc-link"><span class="toc-num">6</span> Location Data</a>
+      <a href="#s7"  class="toc-link"><span class="toc-num">7</span> Data Retention</a>
+      <a href="#s8"  class="toc-link"><span class="toc-num">8</span> Children</a>
+      <a href="#s9"  class="toc-link"><span class="toc-num">9</span> Your Rights</a>
+      <a href="#s10" class="toc-link"><span class="toc-num">10</span> Policy Changes</a>
+      <a href="#s11" class="toc-link"><span class="toc-num">11</span> Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Summary card -->
+  <div class="info-card fade-in">
+    <div class="info-card-icon">✅</div>
+    <p>
+      <strong>The short version:</strong> Room Logger stores your inspection data securely so you can generate reports and protect your deposit. We do not sell your data, we do not run ads, and you can delete everything at any time.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ── 1. Who We Are ── -->
+  <section class="section fade-in" id="s1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Who We Are</h2>
+    </div>
+    <div class="content">
+      <p>
+        Room Logger ("we", "us", "our") is a mobile application designed to help tenants document the condition of rental properties at move-in. We provide tools for photo capture, condition checklists, GPS verification, and PDF inspection report generation.
+      </p>
+      <p>
+        For questions about this policy, see <a href="#s11">Section 11 — Contact Us</a>.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 2. What We Collect ── -->
+  <section class="section fade-in" id="s2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>What We Collect</h2>
+    </div>
+    <div class="content">
+      <p>We collect only the data needed to provide the service. Here is exactly what that includes:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Data Collected</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account</strong></td>
+            <td>Email address, display name, account creation date</td>
+            <td>To create and manage your account</td>
+          </tr>
+          <tr>
+            <td><strong>Property Data</strong></td>
+            <td>Property address, city, state, ZIP, landlord name, move-in date, monthly rent</td>
+            <td>To populate your inspection reports</td>
+          </tr>
+          <tr>
+            <td><strong>Inspection Data</strong></td>
+            <td>Room names, checklist responses (good/fair/damaged), condition notes</td>
+            <td>To document property condition</td>
+          </tr>
+          <tr>
+            <td><strong>Photos</strong></td>
+            <td>Images captured within the app, stored in Firebase Storage</td>
+            <td>To include in your PDF report</td>
+          </tr>
+          <tr>
+            <td><strong>Location</strong></td>
+            <td>GPS coordinates (latitude/longitude) at the moment of photo capture</td>
+            <td>To verify inspection location in the report</td>
+          </tr>
+          <tr>
+            <td><strong>Usage Data</strong></td>
+            <td>App version, device OS, anonymous crash reports</td>
+            <td>To fix bugs and improve the app</td>
+          </tr>
+          <tr>
+            <td><strong>Payment Data</strong></td>
+            <td>Subscription status, purchase history (no card numbers)</td>
+            <td>To manage your plan; processed by RevenueCat</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do <strong>not</strong> collect:</p>
+      <ul>
+        <li>Credit card or banking information (handled entirely by Apple/Google/RevenueCat)</li>
+        <li>Contacts, calendars, or other device data</li>
+        <li>Background location (GPS is only captured when you take a photo inside the app)</li>
+        <li>Biometric data of any kind</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 3. How We Use It ── -->
+  <section class="section fade-in" id="s3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>How We Use Your Data</h2>
+    </div>
+    <div class="content">
+      <p>We use your data exclusively to:</p>
+      <ol>
+        <li>Create and sync your account across your devices</li>
+        <li>Store your property and room inspection data securely</li>
+        <li>Generate your PDF inspection reports including photos, checklists, timestamps, and GPS coordinates</li>
+        <li>Manage your subscription and entitlement status</li>
+        <li>Send transactional emails (password reset, account security) — no marketing emails unless you opt in</li>
+        <li>Diagnose and fix app crashes using anonymous error logs</li>
+        <li>Improve app performance and user experience</li>
+      </ol>
+      <div class="info-card">
+        <div class="info-card-icon">🚫</div>
+        <p>We do not sell, rent, trade, or share your personal data with advertisers, data brokers, or any third party for marketing purposes. Ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 4. How We Store It ── -->
+  <section class="section fade-in" id="s4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>How We Store &amp; Protect Your Data</h2>
+    </div>
+    <div class="content">
+      <p>
+        All data is stored on <strong>Google Firebase</strong> (Google Cloud Platform), which provides industry-leading security infrastructure:
+      </p>
+      <ul>
+        <li><strong>Encryption in transit:</strong> All data is transmitted over HTTPS/TLS 1.3</li>
+        <li><strong>Encryption at rest:</strong> Your data is encrypted at rest on Firebase servers</li>
+        <li><strong>Authentication:</strong> Only you can access your data through your authenticated account. Firebase Security Rules enforce user-level isolation — no other user can read or write your documents</li>
+        <li><strong>Photos:</strong> Stored in Firebase Storage with authenticated-only access URLs</li>
+        <li><strong>No plaintext passwords:</strong> Authentication is managed by Firebase Auth using industry-standard password hashing</li>
+      </ul>
+      <p>
+        While we implement strong safeguards, no digital system is 100% impenetrable. We encourage you to use a strong, unique password and enable device-level security (PIN, biometric lock).
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 5. Third Parties ── -->
+  <section class="section fade-in" id="s5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <div class="content">
+      <p>
+        Room Logger uses the following third-party services to operate. Each is subject to their own privacy policy.
+      </p>
+
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#F5A623;"></div>
+          <div>
+            <div class="vendor-name">Firebase Auth</div>
+            <div class="vendor-role">Account authentication</div>
+          </div>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#2196F3;"></div>
+          <div>
+            <div class="vendor-name">Firestore</div>
+            <div class="vendor-role">Data storage</div>
+          </div>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#34A853;"></div>
+          <div>
+            <div class="vendor-name">Firebase Storage</div>
+            <div class="vendor-role">Photo storage</div>
+          </div>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#E74C3C;"></div>
+          <div>
+            <div class="vendor-name">RevenueCat</div>
+            <div class="vendor-role">Subscription management</div>
+          </div>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#4285F4;"></div>
+          <div>
+            <div class="vendor-name">Google Sign-In</div>
+            <div class="vendor-role">Social authentication</div>
+          </div>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-dot" style="background:#1B2B4B;"></div>
+          <div>
+            <div class="vendor-name">Geolocator</div>
+            <div class="vendor-role">GPS at photo capture</div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        These services may receive limited data necessary for their function (e.g., Firebase receives your documents to store them; RevenueCat receives your user ID and subscription status). None of these providers are permitted to use your data for purposes beyond providing their service to us.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 6. Location Data ── -->
+  <section class="section fade-in" id="s6">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Location Data</h2>
+    </div>
+    <div class="content">
+      <p>
+        Room Logger requests access to your device's GPS for one specific purpose: to embed location coordinates into photos taken during property inspections.
+      </p>
+      <ul>
+        <li><strong>When:</strong> GPS is only captured at the moment you take a photo inside the app. We never collect background location.</li>
+        <li><strong>Why:</strong> GPS coordinates appear in your PDF report as verification that photos were taken at the property, adding legal weight to your documentation.</li>
+        <li><strong>What's stored:</strong> Latitude and longitude of each photo, stored alongside that photo's Firestore record.</li>
+        <li><strong>Control:</strong> You can deny location permission. The app will still function; your photos will simply have no GPS metadata embedded.</li>
+      </ul>
+      <div class="info-card">
+        <div class="info-card-icon">📍</div>
+        <p>Location data is never used for advertising, analytics profiling, or any purpose other than embedding GPS verification in your inspection report.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 7. Data Retention ── -->
+  <section class="section fade-in" id="s7">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>Data Retention &amp; Deletion</h2>
+    </div>
+    <div class="content">
+      <p>
+        Your data is yours. You can delete it at any time.
+      </p>
+      <ul>
+        <li><strong>Active account:</strong> Your data is retained as long as your account exists and you choose to keep it.</li>
+        <li><strong>Delete account:</strong> Go to <em>Settings → Delete Account</em>. All your data — profile, properties, rooms, photos, and reports — is permanently and irreversibly deleted from our servers within <strong>30 days</strong>.</li>
+        <li><strong>Individual properties:</strong> You can delete individual properties and their associated rooms, photos, and reports at any time from the app.</li>
+        <li><strong>Backup copies:</strong> Firebase may retain encrypted backups for up to 30 days for disaster recovery purposes, after which they are overwritten.</li>
+      </ul>
+      <p>
+        Once deleted, your data cannot be recovered. We recommend downloading any reports you wish to keep before deleting your account.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 8. Children ── -->
+  <section class="section fade-in" id="s8">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <div class="content">
+      <p>
+        Room Logger is designed for adults who rent residential property. The app is not directed to, and we do not knowingly collect personal information from, children under the age of 13 (or under 16 in the European Economic Area).
+      </p>
+      <p>
+        If you believe a child has provided us with personal information, please contact us at <a href="mailto:privacy@roomlogger.app">privacy@roomlogger.app</a> and we will promptly delete it.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 9. Your Rights ── -->
+  <section class="section fade-in" id="s9">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2>Your Rights</h2>
+    </div>
+    <div class="content">
+      <p>
+        Depending on where you live, you may have the following rights regarding your personal data. We honour all of them regardless of your location.
+      </p>
+
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-icon">👁️</div>
+          <div class="right-title">Access</div>
+          <div class="right-desc">Request a copy of all personal data we hold about you.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-icon">✏️</div>
+          <div class="right-title">Correction</div>
+          <div class="right-desc">Update or correct inaccurate information at any time via the app or by emailing us.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-icon">🗑️</div>
+          <div class="right-title">Deletion</div>
+          <div class="right-desc">Delete all your data via Settings → Delete Account, or by emailing us.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-icon">📦</div>
+          <div class="right-title">Portability</div>
+          <div class="right-desc">Request your data in a machine-readable format (JSON export).</div>
+        </div>
+        <div class="right-card">
+          <div class="right-icon">🚫</div>
+          <div class="right-title">Objection</div>
+          <div class="right-desc">Object to any processing of your data that you believe is not justified.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-icon">⏸️</div>
+          <div class="right-title">Restriction</div>
+          <div class="right-desc">Request that we restrict processing of your data in certain circumstances.</div>
+        </div>
+      </div>
+
+      <p>
+        To exercise any of these rights, email <a href="mailto:privacy@roomlogger.app">privacy@roomlogger.app</a>. We will respond within <strong>30 days</strong>.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 10. Policy Changes ── -->
+  <section class="section fade-in" id="s10">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <div class="content">
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes in the app, new legal requirements, or improved practices. When we do:
+      </p>
+      <ul>
+        <li>The "Last updated" date at the top of this page will change</li>
+        <li>We will notify you via email if the change is material</li>
+        <li>Continued use of the app after the effective date constitutes acceptance of the updated policy</li>
+      </ul>
+      <p>
+        We recommend checking this page periodically. Previous versions are available on request.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 11. Contact ── -->
+  <section class="section fade-in" id="s11">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <h2>Contact Us</h2>
+    </div>
+    <div class="content">
+      <p>
+        If you have any questions, concerns, or requests relating to this Privacy Policy or how your data is handled, please get in touch. We take privacy seriously and will respond promptly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact card -->
+  <div class="contact-card fade-in">
+    <div class="contact-card-inner">
+      <h3>We're here to help</h3>
+      <p>
+        Privacy questions, data requests, or anything else —<br>
+        we aim to respond within 2 business days.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:privacy@roomlogger.app" class="contact-link contact-link-primary">
+          ✉️ privacy@roomlogger.app
+        </a>
+        <a href="mailto:support@roomlogger.app" class="contact-link contact-link-secondary">
+          💬 support@roomlogger.app
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-icon">🏠</div>
+      <span class="footer-name">Room Logger</span>
+    </div>
+    <div class="footer-links">
+      <a href="#" class="footer-link active">Privacy Policy</a>
+      <a href="#" class="footer-link">Terms of Service</a>
+      <a href="mailto:support@roomlogger.app" class="footer-link">Support</a>
+      <a href="#" class="footer-link">App Store</a>
+      <a href="#" class="footer-link">Google Play</a>
+    </div>
+    <p class="footer-copy">© 2026 Room Logger. All rights reserved. · Effective January 1, 2026</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
